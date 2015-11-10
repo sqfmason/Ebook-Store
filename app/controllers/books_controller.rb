@@ -1,5 +1,7 @@
 class BooksController < ApplicationController
+  before_filter :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+
 
   # GET /books
   # GET /books.json
@@ -23,18 +25,12 @@ class BooksController < ApplicationController
 
   # POST /books
   # POST /books.json
-  def create
-    @book = Book.new(book_params)
 
-    respond_to do |format|
-      if @book.save
-        format.html { redirect_to @book, notice: 'Book was successfully created.' }
-        format.json { render :show, status: :created, location: @book }
-      else
-        format.html { render :new }
-        format.json { render json: @book.errors, status: :unprocessable_entity }
-      end
-    end
+
+  def create
+    @book = current_user.books.new(book_params)
+    @book.save
+    respond_with(@book)
   end
 
   # PATCH/PUT /books/1
