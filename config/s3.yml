@@ -2,3 +2,5 @@
 access_key_id: AKIAJALFLJBFTKAKW7NQ     
 secret_access_key: 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
 bucket: coolestdev     
+STRIPE_PUBLISHABLE_KEY: pk_test_3jbuQgLEcs1r6vPS1JYZlOkm
+STRIPE_SECRET_KEY: sk_test_q7yN32Q4Y6qIkgbPWjMtpSGm
