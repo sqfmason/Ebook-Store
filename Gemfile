@@ -47,5 +47,6 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'simple_form'
 gem 'devise'
 gem 'cancan'
-gem "paperclip", "~> 4.3"
-gem 'dotenv-rails', groups: :development
+gem "paperclip", :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523bd46c768226893f23889079a7aa9c73b57d68'
+gem 'figaro'
+gem 'aws-sdk'
